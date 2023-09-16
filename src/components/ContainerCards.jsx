@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import 'animate.css';
 //data para las cards
 import { data } from '../assets/js/data';
 //componentes
@@ -25,18 +26,20 @@ export default function ContainerCards() {
 }
 
 const Conteiner = styled.div`
-    /* div{
-        display: inline-flexbox;
-    } */
-    border: 2px solid blue;
+    width: 80%;
+    margin: 2em auto;
+    /* border: 2px solid blue; */
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Divide el contenedor en 3 columnas de igual ancho */
-    gap: 10px 4px;
+    gap: 2em 0; 
 
     
     .cc{
         border-radius: 6px;
         box-shadow: 0px 0px 30px hsl(0, 0%, 41%, .4);
+        margin: auto;
+        
+        cursor: pointer;
     }
 
     .cyan{
@@ -44,13 +47,15 @@ const Conteiner = styled.div`
         
         grid-column: 1;
         grid-row: 1 / 3;
-        margin: auto;
+
+
     }
-    
+
     .red{
         border-top: 5px solid hsl(0, 78%, 62%);
         grid-column: 2;
         grid-row: 1;
+        
     }
 
     .orange{
@@ -65,38 +70,7 @@ const Conteiner = styled.div`
 
         grid-column: 3;
         grid-row: 1 / 3;
-        margin: auto;
+
     }
 
 `;
-
-
-
-//   .item1 {
-//     grid-column: 1 / 2; /* Caja 1 ocupa la columna 1 */
-//     grid-row: 1 / 3;/* Caja 1 ocupa 2 filas */
-    
-//     margin-top: 1em;
-//     margin-bottom: 1em;
-//     border:2px solid red;
-//   }
-  
-//   .item2 {
-//     border:2px solid red;
-//     grid-column: 2 / 3; /* Caja 2 ocupa la columna 2 */
-//     grid-row: 1 / 2; /* Caja 2 ocupa 1 fila */
-//   }
-  
-//   .item3 {
-//     border:2px solid red;
-//     grid-column: 2 / 3; /* Caja 3 ocupa la columna 2 */
-//     grid-row: 2 / 3; /* Caja 3 ocupa 1 fila */
-//   }
-  
-//   .item4 {
-//     border:2px solid red;
-//     grid-column: 3 / 4; /* Caja 4 ocupa la columna 3 */
-//     grid-row: 1 / 3; /* Caja 4 ocupa 2 filas */
-//     margin-top: 1em;
-//     margin-bottom: 1em;
-//   }
