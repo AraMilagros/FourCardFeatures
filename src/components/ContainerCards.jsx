@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import 'animate.css';
+
+import { breakpoints } from '../assets/js/breakpoints';
 //data para las cards
 import { data } from '../assets/js/data';
 //componentes
@@ -26,7 +27,7 @@ export default function ContainerCards() {
 }
 
 const Conteiner = styled.div`
-    width: 80%;
+    /* width: 80%; */
     margin: 2em auto;
     /* border: 2px solid blue; */
     display: grid;
@@ -41,36 +42,68 @@ const Conteiner = styled.div`
         
         cursor: pointer;
     }
-
     .cyan{
         border-top: 5px solid hsl(180, 62%, 55%);
-        
-        grid-column: 1;
-        grid-row: 1 / 3;
-
 
     }
-
     .red{
         border-top: 5px solid hsl(0, 78%, 62%);
-        grid-column: 2;
-        grid-row: 1;
-        
     }
-
     .orange{
         border-top: 5px solid hsl(34, 97%, 64%);
-
-        grid-column: 2;
-        grid-row: 2;
     }
-
     .blue{
         border-top: 5px solid hsl(212, 86%, 64%);
 
-        grid-column: 3;
-        grid-row: 1 / 3;
+    }
 
+    @media (max-width: ${breakpoints.xxl}){
+        .cyan{
+            grid-column: 1;
+            grid-row: 1 / 3;
+            margin-right: 0;
+        }
+        .red{
+            grid-column: 2;
+            grid-row: 1;    
+        }
+        .orange{
+            grid-column: 2;
+            grid-row: 2;
+        }
+        .blue{
+            grid-column: 3;
+            grid-row: 1 / 3;
+            margin-left: 0;
+        }
+    }
+
+    @media ((min-width: ${breakpoints.xs}) and (max-width: ${breakpoints.lg})){
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(4, auto);
+        
+        .cyan{
+            animation: none;
+            grid-column: auto;
+            grid-row: 1;
+            margin: auto;
+        }
+        .red{
+            animation: none;
+            grid-column: auto;
+            grid-row: 2;    
+        }
+        .orange{
+            animation: none;
+            grid-column: auto;
+            grid-row: 3;
+        }
+        .blue{
+            animation: none;
+            grid-column: auto;
+            grid-row: 4;
+            margin: auto;
+        }
     }
 
 `;
